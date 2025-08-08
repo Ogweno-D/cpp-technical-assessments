@@ -44,3 +44,29 @@ Given a number "result" and an array of numbers, find how many unique ways the a
 - Space: O(Result)
 
 ---
+
+## 1. Get Longest Valid String
+
+### Problem Statement
+Implement a function getLongestString that returns the longest string from a given array of strings that meets two conditions:
+
+No repetitive identical characters (e.g., 'AA' is invalid)
+Contains only characters from a given list of valid character
+
+**Solution Walkthrough**
+- **Validation Check**: The function first calls isValid to check if the entire array of strings meets the specified criteria.
+
+    * isValid iterates through each string in the input array.
+    * For each string, it iterates through its individual characters.
+    * It uses the containsChar helper function to verify that each character is present in the provided validChars set.
+    * If any character in any string is found to be invalid, isValid immediately returns false.
+  
+    * If all characters in all strings are valid, the function returns true.
+
+* **Find Longest String**: If the isValid function returns true, the getLongestString function proceeds to find the longest string.
+
+  * It initializes a variable, say longestString, to an empty string.
+  * It then iterates through each string in the array.
+  * For each string, it compares its length to the current length of longestString.
+  * If the current string is longer, it updates longestString to be that string.
+  * After checking all strings, the function returns the final value of longestString.
